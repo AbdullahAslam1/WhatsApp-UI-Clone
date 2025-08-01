@@ -16,22 +16,36 @@ class OnBoardingScreen extends StatelessWidget {
               text: "Welcome to WhatsApp",
               height: 20,
               weight: FontWeight.normal,
-              color: Color(0XFF),
+              color: Color(0XFF000000),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                UiHelper.CustomText(text: "ReadOut", height: 14),
-                UiHelper.CustomText(
-                  text: "Privacy Policy",
-                  height: 14,
-                  color: Colors.blueAccent,
-                ),
-              ],
+            SizedBox(height: 10),
+            RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: TextStyle(fontSize: 14, color: Colors.black),
+                children: [
+                  TextSpan(text: "Read out "),
+                  TextSpan(
+                    text: "Privacy policy ",
+                    style: TextStyle(color: Color(0XFF0C42CC)),
+                  ),
+                  TextSpan(text: "Tap ''Agree and Continue'' \n"),
+                  TextSpan(text: "to accept the "),
+                  TextSpan(
+                    text: "Terms of Service",
+                    style: TextStyle(color: Color(0XFF0C42CC)),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
       ),
+      floatingActionButton: UiHelper.CustomButton(
+        callback: () {},
+        bottonName: "Agree and Continue",
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
