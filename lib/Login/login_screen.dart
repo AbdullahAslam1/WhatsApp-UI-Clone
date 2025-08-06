@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:whatsapp_ui_clone/OTP_screen/OTP_screen.dart';
 import 'package:whatsapp_ui_clone/Widgets/ui_helper.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -106,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 0),
                     child: TextField(
-                      keyboardType: TextInputType.numberWithOptions(),
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         hintText: "+92",
                         border: UnderlineInputBorder(
@@ -126,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: 200,
                   child: TextField(
-                    keyboardType: TextInputType.numberWithOptions(),
+                    keyboardType: TextInputType.number,
                     controller: phone_controller,
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
@@ -142,12 +143,29 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       floatingActionButton: UiHelper.CustomButton(
         callback: () {
-          // Navigator.push(context, MaterialPageRoute(builder: (context) => )
-          // );
+          login(phone_controller.text.toString());
         },
         bottonName: "Next",
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
+  }
+
+  login(String phoneNumber) {
+    if (phoneNumber == "") {
+      return ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Enter your phone number"),
+          backgroundColor: Color(0XFF00A884),
+        ),
+      );
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => OTP_Screen(phone_number: phoneNumber),
+        ),
+      );
+    }
   }
 }
