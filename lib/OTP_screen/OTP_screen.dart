@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:whatsapp_ui_clone/Widgets/ui_helper.dart';
 import 'package:whatsapp_ui_clone/profile/profile_screen.dart';
 
+// ignore: must_be_immutable
 class OTP_Screen extends StatelessWidget {
   String phone_number;
   OTP_Screen({required this.phone_number});
