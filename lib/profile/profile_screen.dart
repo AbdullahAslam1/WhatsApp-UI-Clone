@@ -85,9 +85,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       floatingActionButton: UiHelper.CustomButton(
         callback: () {
-          Navigator.push(
+          Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => HomeScreen()),
+            (route) => false,
           );
         },
         bottonName: "Next",

@@ -34,14 +34,9 @@ class CallsScreen extends StatelessWidget {
               UiHelper.CustomText(text: "Recent Calls", height: 16),
             ],
           ),
+          SizedBox(height: 20),
           Expanded(
-            child: ListView.separated(
-              separatorBuilder: (context, index) => Divider(
-                color: Colors.grey,
-                thickness: 0.5,
-                indent: 75,
-                endIndent: 10,
-              ),
+            child: ListView.builder(
               itemCount: callContent.length,
               itemBuilder: (context, index) {
                 return ListTile(
