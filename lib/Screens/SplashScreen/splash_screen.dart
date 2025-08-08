@@ -1,11 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:whatsapp_ui_clone/Widgets/ui_helper.dart';
 import 'package:whatsapp_ui_clone/onboarding_page/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   State<SplashScreen> createState() => _SplashScreenState();
 }
 

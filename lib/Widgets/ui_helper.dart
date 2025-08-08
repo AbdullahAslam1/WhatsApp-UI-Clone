@@ -50,6 +50,7 @@ class UiHelper {
       ),
       alignment: Alignment.center,
       child: TextField(
+        keyboardType: TextInputType.numberWithOptions(),
         controller: controller,
         textAlign: TextAlign.center,
         decoration: InputDecoration(

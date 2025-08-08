@@ -6,7 +6,7 @@ import 'calls_screen.dart';
 import 'package:whatsapp_ui_clone/Widgets/ui_helper.dart'; // Assuming this is your UiHelper
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

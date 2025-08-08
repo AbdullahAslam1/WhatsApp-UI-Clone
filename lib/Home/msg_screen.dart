@@ -5,7 +5,7 @@ class MessageScreen extends StatefulWidget {
   final String name;
   final String profileImage; // asset path or http url
   final String? initialMessage;
-  final String? msgTime; // example: "10:45 PM"
+  final String? msgTime;
 
   const MessageScreen({
     Key? key,
@@ -156,7 +156,7 @@ class _ChatScreenState extends State<MessageScreen> {
                   weight: FontWeight.bold,
                   color: Colors.white,
                 ),
-                const SizedBox(height: 2),
+                SizedBox(height: 2),
                 UiHelper.CustomText(
                   text: "Online",
                   height: 12,

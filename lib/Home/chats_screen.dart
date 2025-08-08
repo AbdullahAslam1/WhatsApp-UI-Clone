@@ -96,13 +96,13 @@ class ChatsScreen extends StatelessWidget {
                   UiHelper.CustomText(
                     text: arrContent[index]["time"].toString(),
                     height: 11,
-                    color: Color(0XFF00A884),
+                    color: Color(0xFF075E54),
                     weight: FontWeight.bold,
                   ),
                   SizedBox(height: 6),
                   CircleAvatar(
                     radius: 11,
-                    backgroundColor: Color(0XFF00A884),
+                    backgroundColor: Color(0xFF075E54),
                     child: UiHelper.CustomText(
                       text: arrContent[index]["msg"].toString(),
                       height: 10,
@@ -125,7 +125,7 @@ class ChatsScreen extends StatelessWidget {
         },
         child: CircleAvatar(
           radius: 30,
-          backgroundColor: Color(0XFF00A884),
+          backgroundColor: Color(0xFF075E54),
           child: Image.asset("assets/images/mode_comment_black_24dp 1.png"),
         ),
       ),

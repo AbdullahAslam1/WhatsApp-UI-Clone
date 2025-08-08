@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:whatsapp_ui_clone/Widgets/ui_helper.dart';
 import 'package:whatsapp_ui_clone/profile/profile_screen.dart';
 
 // ignore: must_be_immutable
-class OTP_Screen extends StatelessWidget {
-  String phone_number;
-  OTP_Screen({required this.phone_number});
+class OTPScreen extends StatelessWidget {
+  String phoneNumber;
+  OTPScreen({super.key, required this.phoneNumber});
 
-  TextEditingController otp1_controller = TextEditingController();
-  TextEditingController otp2_controller = TextEditingController();
+  TextEditingController otp1Controller = TextEditingController();
+  TextEditingController otp2Controller = TextEditingController();
   TextEditingController otp3_controller = TextEditingController();
   TextEditingController otp4_controller = TextEditingController();
   TextEditingController otp5_controller = TextEditingController();
   TextEditingController otp6_controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,7 @@ class OTP_Screen extends StatelessWidget {
             ),
             SizedBox(height: 40),
             UiHelper.CustomText(
-              text: "You've tried to register +92-${phone_number}",
+              text: "You've tried to register +92-$phoneNumber",
               height: 14,
             ),
             // SizedBox(height: 10),
@@ -58,9 +58,9 @@ class OTP_Screen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                UiHelper.custom_container(otp1_controller),
+                UiHelper.custom_container(otp1Controller),
                 SizedBox(width: 10),
-                UiHelper.custom_container(otp2_controller),
+                UiHelper.custom_container(otp2Controller),
                 SizedBox(width: 10),
                 UiHelper.custom_container(otp3_controller),
                 SizedBox(width: 10),

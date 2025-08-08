@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:whatsapp_ui_clone/OTP_screen/OTP_screen.dart';
 import 'package:whatsapp_ui_clone/Widgets/ui_helper.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController phone_controller = TextEditingController();
-  String selected_country = "Pakistan";
+  TextEditingController phoneController = TextEditingController();
+  String selectedCountry = "Pakistan";
 
   final List<String> countries = [
     'Afghanistan',
@@ -80,14 +80,14 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.only(left: 60, right: 60),
               child: DropdownButtonFormField(
                 items: countries.map((String country) {
-                  return DropdownMenuItem(child: Text(country), value: country);
+                  return DropdownMenuItem(value: country, child: Text(country));
                 }).toList(),
                 onChanged: (newValue) {
                   setState(() {
-                    selected_country = newValue!;
+                    selectedCountry = newValue!;
                   });
                 },
-                value: selected_country,
+                value: selectedCountry,
                 decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Color(0XFF00A884)),
@@ -128,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: 200,
                   child: TextField(
                     keyboardType: TextInputType.number,
-                    controller: phone_controller,
+                    controller: phoneController,
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Color(0XFF00A884)),
@@ -143,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       floatingActionButton: UiHelper.CustomButton(
         callback: () {
-          login(phone_controller.text.toString());
+          login(phoneController.text.toString());
         },
         bottonName: "Next",
       ),
@@ -163,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => OTP_Screen(phone_number: phoneNumber),
+          builder: (context) => OTPScreen(phoneNumber: phoneNumber),
         ),
       );
     }
