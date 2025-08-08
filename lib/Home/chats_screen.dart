@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_ui_clone/Home/contact_screen.dart';
+import 'package:whatsapp_ui_clone/Home/msg_screen.dart';
 import 'package:whatsapp_ui_clone/Widgets/ui_helper.dart';
 
 class ChatsScreen extends StatelessWidget {
@@ -73,19 +75,34 @@ class ChatsScreen extends StatelessWidget {
                   color: Color(0XFF889095),
                 ),
               ),
+
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MessageScreen(
+                      name: arrContent[index]["name"].toString(),
+                      profileImage: arrContent[index]["images"].toString(),
+                      initialMessage: arrContent[index]["lastmsg"].toString(),
+                      msgTime: arrContent[index]["time"].toString(),
+                      // optional
+                    ),
+                  ),
+                );
+              },
               trailing: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   UiHelper.CustomText(
                     text: arrContent[index]["time"].toString(),
                     height: 11,
-                    color: Color(0XFF026500),
+                    color: Color(0XFF00A884),
                     weight: FontWeight.bold,
                   ),
                   SizedBox(height: 6),
                   CircleAvatar(
                     radius: 11,
-                    backgroundColor: Color(0XFF026500),
+                    backgroundColor: Color(0XFF00A884),
                     child: UiHelper.CustomText(
                       text: arrContent[index]["msg"].toString(),
                       height: 10,
@@ -99,10 +116,18 @@ class ChatsScreen extends StatelessWidget {
           );
         },
       ),
-      floatingActionButton: CircleAvatar(
-        radius: 30,
-        backgroundColor: Color(0XFF00A884),
-        child: Image.asset("assets/images/mode_comment_black_24dp 1.png"),
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ContactScreen()),
+          );
+        },
+        child: CircleAvatar(
+          radius: 30,
+          backgroundColor: Color(0XFF00A884),
+          child: Image.asset("assets/images/mode_comment_black_24dp 1.png"),
+        ),
       ),
     );
   }
